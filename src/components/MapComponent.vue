@@ -103,7 +103,7 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a target="_blank" href="https://github.com/kinshukdua/LiveActionMap">Live Action Map</a> contributors | &copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 7,
+      zoom: 6,
       center: [49.038230248475905, 31.450182690663947],
       markers: [],
       zones: [],
