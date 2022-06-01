@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import LandingView from "../views/LandingView.vue";
+// import FeedView from "../views/FeedView.vue";
+// import CreditsView from "../views/AboutView.vue";
+// import DebugView from "../views/DebugView.vue";
 
 Vue.use(VueRouter);
 
@@ -11,7 +14,7 @@ const routes = [
     component: LandingView,
   },
   {
-    path: "close",
+    path: "/close",
     redirect: "/",
   },
 ];
