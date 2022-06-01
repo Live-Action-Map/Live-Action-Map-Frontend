@@ -1,0 +1,7 @@
+version: "3.4"
+services:
+  live-action-map-backend:
+    ports:
+      - 2035:80
+    image: "git.honex.life:5050/live-action-map/live-action-map-frontend:latest"
+    restart: unless-stopped

@@ -1,0 +1,47 @@
+stages:
+  - Build App
+  - Build Container
+  - Deploy
+
+
+Build App:
+  image: node:14
+  stage: Build App
+  cache:
+    paths:
+      - node_modules
+  script:
+    - npm install --progress=false
+    - npm run build 
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
+
+Build Container:
+  image: docker:19.03.12
+  services:
+    - docker:19.03.12-dind
+  needs:
+    - job: Build App
+      artifacts: true
+  before_script:
+   - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker info 
+    - docker pull $CI_REGISTRY_IMAGE:latest || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:latest --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --tag $CI_REGISTRY_IMAGE:latest .
+    - docker push $CI_REGISTRY_IMAGE:latest
+  stage: Build Container
+
+Deploy Container:
+  only:
+    - main
+  tags:
+    - shell
+  before_script:
+   - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker-compose pull
+    - docker-compose up -d
+  stage: Deploy
