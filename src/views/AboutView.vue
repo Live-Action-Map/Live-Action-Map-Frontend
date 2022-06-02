@@ -43,6 +43,7 @@ export default {
   background-color: rgb(235, 235, 235);
   height: calc(100vh - 50px);
   width: 100vw;
+  overflow: hidden;
 }
 .content {
   margin-left: 40px;
@@ -51,6 +52,7 @@ export default {
   height: calc(100vh - 70px);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  overflow: auto;
 }
 .holder {
   padding: 10px;
