@@ -43,7 +43,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 300px;
+  width: 300px;
   .image {
     background-color: purple;
     border-radius: 50%;
@@ -70,6 +70,7 @@ export default {
     top: -20px;
     border-radius: 15px;
     padding: 10px;
+    text-align: center;
     .name {
       padding-top: 25px;
       font-size: 25px;

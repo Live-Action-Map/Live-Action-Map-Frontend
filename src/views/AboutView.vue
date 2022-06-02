@@ -63,7 +63,6 @@ export default {
   display: flex;
   padding-top: 25px;
   flex-wrap: wrap;
-  justify-content: space-evenly;
   align-items: center;
 }
 </style>
