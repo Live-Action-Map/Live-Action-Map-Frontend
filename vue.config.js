@@ -11,6 +11,11 @@ module.exports = {
         ws: true,
         changeOrigin: true,
       },
+      "^/socket.io": {
+        target: "http://10.2.0.30:25567",
+        ws: true,
+        changeOrigin: true,
+      },
     },
   },
 };
