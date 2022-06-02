@@ -28,7 +28,6 @@ export default {
       that.feed.unshift(data.message);
     });
     axios.get("/api/markers").then((res) => {
-      console.log(res.data[0]);
       if (res.data) {
         that.feed = res.data;
       }

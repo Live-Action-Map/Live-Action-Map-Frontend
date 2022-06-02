@@ -32,7 +32,6 @@ export default {
     let that = this;
     axios.get("/api/contributors").then((res) => {
       that.contributors = res.data;
-      console.log(res.data);
     });
   },
 };

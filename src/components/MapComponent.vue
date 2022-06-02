@@ -126,11 +126,9 @@ export default {
     updateMapData() {
       let that = this;
       axios.get("/api/markers").then((res) => {
-        console.log(res.data[0]);
         that.markers = res.data;
       });
       axios.get("/api/zones").then((res) => {
-        console.log(res.data[0]);
         that.zones = res.data;
       });
     },
