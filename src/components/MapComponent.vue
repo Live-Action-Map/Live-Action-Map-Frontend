@@ -9,7 +9,10 @@
     <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
     <l-control position="bottomleft">
       <div class="control">
-        <button @click="reCenter">Recenter</button>
+        <div class="legendItem" @click="reCenter">
+          Recenter <i class="fas fa-bullseye"></i>
+        </div>
+        |
         <div class="check-box">
           <input
             v-model="showZones"
@@ -18,8 +21,11 @@
             name="showZones"
             checked
           />
-          <label for="showZones">Zones</label>
+          <label class="legendItem" for="showZones"
+            >Show Zones <i class="fas fa-border-none"></i
+          ></label>
         </div>
+        |
         <div class="check-box">
           <input
             v-model="showMarkers"
@@ -28,7 +34,10 @@
             name="showMarkers"
             checked
           />
-          <label for="showMarkers">Markers</label>
+          <label class="legendItem" for="showMarkers">
+            Show Markers
+            <i class="fas fa-map-pin"></i>
+          </label>
         </div>
       </div>
     </l-control>
