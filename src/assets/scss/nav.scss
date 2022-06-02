@@ -7,11 +7,14 @@ nav {
   gap: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  .link {
+    height: 100%;
     img {
       box-sizing: border-box;
       height: 100%;
       padding: 5px;
     }
+  }
   @media screen and (max-width: 550px) {
     .title {
       display: none;
