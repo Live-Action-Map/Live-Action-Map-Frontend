@@ -13,7 +13,7 @@
           >{{ role }}</span
         >
       </div>
-      <div class="description">Lead developer v2.0 up</div>
+      <div class="description">{{ contributor.description }}</div>
       <div class="socials">
         <a
           v-for="(social, index) in contributor.socials"
