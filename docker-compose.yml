@@ -5,3 +5,4 @@ services:
       - 2035:80
     image: "git.honex.life:5050/live-action-map/live-action-map-frontend:latest"
     restart: unless-stopped
+    
