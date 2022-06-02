@@ -2,6 +2,8 @@
   <div class="about">
     <div class="content">
       <div class="holder">
+        <div class="section-title">About the project:</div>
+        <aboutComponent />
         <div class="section-title">Contributors:</div>
         <div class="section">
           <contributor
@@ -17,10 +19,12 @@
 
 <script>
 import contributor from "@/components/ContributorComponent.vue";
+import aboutComponent from "@/components/AboutProject.vue";
 
 import axios from "axios";
 export default {
   components: {
+    aboutComponent,
     contributor,
   },
   data() {
