@@ -48,15 +48,22 @@
         :lat-lng="marker.position"
       >
         <l-popup>
+          <div class="popup-credit">
+            <a
+              :href="`https://twitter.com/i/web/status/${marker.id}`"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-twitter">See the tweet</i>
+            </a>
+          </div>
           <div class="popup-content">{{ marker.text }}</div>
           <div v-if="marker.image" class="popup-image">
             <img :src="marker.image" alt="" />
           </div>
-          <!-- <div class="popup-credit">
-            <a :href="marker.uri" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-twitter">{{ marker.user }}</i>
-            </a>
-          </div> -->
+          <div style="color: #1da1f2">
+            Posted: {{ getMapTime(marker.created) }}
+          </div>
         </l-popup>
       </l-marker>
     </v-marker-cluster>
@@ -85,6 +92,7 @@
 <script>
 import L from "leaflet";
 import axios from "axios";
+import moment from "moment";
 import {
   LControl,
   LMap,
@@ -131,6 +139,10 @@ export default {
       axios.get("/api/zones").then((res) => {
         that.zones = res.data;
       });
+    },
+    getMapTime(time) {
+      time = moment(time).fromNow();
+      return time;
     },
   },
   mounted() {
