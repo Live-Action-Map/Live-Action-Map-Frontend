@@ -132,7 +132,6 @@ export default {
       this.map.panTo(new L.LatLng(49.038230248475905, 31.450182690663947));
     },
     updateMapData() {
-      console.log("Run update task");
       let that = this;
       axios.get("/api/markers").then((res) => {
         that.markers = res.data;
