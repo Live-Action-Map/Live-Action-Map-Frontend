@@ -147,7 +147,7 @@ export default {
   },
   mounted() {
     this.updateMapData();
-    setInterval(this.updateMapData, 1000);
+    setInterval(this.updateMapData, 60000);
   },
 };
 </script>
